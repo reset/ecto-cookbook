@@ -18,6 +18,7 @@
 #
 
 include_recipe "elixir::default"
+include_recipe "libarchive::default"
 
 asset = github_asset "migrator.tar.gz" do
   repo node[:ecto][:migrator][:repo]
