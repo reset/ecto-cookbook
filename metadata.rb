@@ -1,0 +1,11 @@
+name             "ecto"
+maintainer       "Jamie Winsor"
+maintainer_email "jamie@vialstudios.com"
+license          "All rights reserved"
+description      "Installs/Configures ecto"
+long_description "Installs/Configures ecto"
+version          "0.1.0"
+
+depends "elixir"
+depends "libarchive"
+depends "github"
