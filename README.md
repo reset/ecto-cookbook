@@ -1,31 +1,12 @@
 # ecto-cookbook
 
-TODO: Enter the cookbook description here.
+Installs, configures, and provides LWRPs for components of [Ecto](github.com/elixir-lang/ecto)
 
 ## Supported Platforms
 
-TODO: List your supported platforms.
-
-## Attributes
-
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['ecto']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
-  </tr>
-</table>
+* Ubuntu
 
 ## Usage
-
-### ecto::default
 
 Include `ecto` in your node's `run_list`:
 
@@ -37,15 +18,35 @@ Include `ecto` in your node's `run_list`:
 }
 ```
 
-## Contributing
+### Runing migrations
 
-1. Fork the repository on Github
-2. Create a named feature branch (i.e. `add-new-recipe`)
-3. Write your change
-4. Write tests for your change (if applicable)
-5. Run the tests, ensuring they all pass
-6. Submit a Pull Request
+First include `ecto::default` or `ecto::migrator` in your recipe
+
+```ruby
+include_recipe "ecto::migrator"
+```
+
+Then leverage the `ecto_migrate` LWRP to run the Ecto migrations found at the given path
+
+```ruby
+ecto_migrate "my_database" do
+  username "my_username"
+  password "secure_password"
+  host "localhost"
+  migrations_path "/path/to/migrations"
+end
+```
+
+## Recipes
+
+### ecto::default
+
+Installs and configures default components for Ecto
+
+### ecto::migrator
+
+Installs and symlinks the [`migrator`](https://github.com/reset/migrator) binary to `/usr/local/bin/migrator`
 
 ## License and Authors
 
-Author:: YOUR_NAME (<YOUR_EMAIL>)
+Author:: Jamie Winsor (<jamie@vialstudios.com>)

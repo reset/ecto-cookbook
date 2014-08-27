@@ -1,9 +1,9 @@
 name             "ecto"
 maintainer       "Jamie Winsor"
 maintainer_email "jamie@vialstudios.com"
-license          "All rights reserved"
-description      "Installs/Configures ecto"
-long_description "Installs/Configures ecto"
+license          "Apache 2.0"
+description      "Installs, configures, and provides LWRPs for components of Ecto"
+long_description "Installs, configures, and provides LWRPs for components of Ecto"
 version          "0.1.0"
 
 depends "elixir"
