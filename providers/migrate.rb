@@ -21,6 +21,6 @@ use_inline_resources
 
 action :run do
   execute "#{new_resource.name}-ecto-migrate" do
-    command "migrator up #{new_resource.migrations_path} #{new_resource.connection_string}"
+    command "migrator up #{new_resource.migrations_path} #{new_resource.connection_string} -s #{new_resource.schema}"
   end
 end
