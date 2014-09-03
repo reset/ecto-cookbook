@@ -27,6 +27,7 @@ attribute :host, default: "localhost", kind_of: String
 attribute :port, default: 5432, kind_of: Integer
 attribute :migrations_path, required: true, kind_of: String
 attribute :schema, default: "public", kind_of: String
+attribute :environment, default: Hash.new, kind_of: Hash
 
 def connection_string
   str = "ecto://#{username}"
