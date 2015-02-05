@@ -18,6 +18,6 @@
 #
 
 default[:ecto][:migrator][:repo]        = "reset/migrator"
-default[:ecto][:migrator][:release]     = "0.2.0"
+default[:ecto][:migrator][:release]     = "0.4.0"
 default[:ecto][:migrator][:deploy_path] = "/opt/ecto-migrator/#{node[:ecto][:migrator][:release]}"
 default[:ecto][:migrator][:bin_path]    = "/usr/local/bin/migrator"
