@@ -1,7 +1,4 @@
 #
-# Cookbook Name:: ecto
-# Recipe:: migrator
-#
 # Copyright (C) 2014-2015 Jamie Winsor
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,22 +14,16 @@
 # limitations under the License.
 #
 
-include_recipe "elixir::default"
-include_recipe "libarchive::default"
+module Ecto
+  module Migrator
+    class << self
+      def bin_path(node)
+        File.join(node[:ecto][:migrator][:install_path], "migrator")
+      end
 
-asset = github_asset "migrator.tar.gz" do
-  repo node[:ecto][:migrator][:repo]
-  release node[:ecto][:migrator][:release]
-end
-
-libarchive_file "migrator.tar.gz" do
-  path asset.asset_path
-  extract_to Ecto::Migrator.deploy_path(node)
-
-  action :extract
-  only_if { ::File.exist?(asset.asset_path) }
-end
-
-link Ecto::Migrator.bin_path(node) do
-  to File.join(Ecto::Migrator.deploy_path(node), "migrator")
+      def deploy_path(node)
+        File.join("/opt/ecto-migrator", node[:ecto][:migrator][:release])
+      end
+    end
+  end
 end

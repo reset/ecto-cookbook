@@ -17,7 +17,6 @@
 # limitations under the License.
 #
 
-default[:ecto][:migrator][:repo]        = "reset/migrator"
-default[:ecto][:migrator][:release]     = "0.4.0"
-default[:ecto][:migrator][:deploy_path] = "/opt/ecto-migrator/#{node[:ecto][:migrator][:release]}"
-default[:ecto][:migrator][:bin_path]    = "/usr/local/bin/migrator"
+default[:ecto][:migrator][:repo]         = "reset/migrator"
+default[:ecto][:migrator][:release]      = "0.4.0"
+default[:ecto][:migrator][:install_path] = "/usr/local/bin"
