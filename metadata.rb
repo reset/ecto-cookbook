@@ -4,7 +4,7 @@ maintainer_email "jamie@vialstudios.com"
 license          "Apache 2.0"
 description      "Installs, configures, and provides LWRPs for components of Ecto"
 long_description "Installs, configures, and provides LWRPs for components of Ecto"
-version          "0.3.1"
+version          "0.3.2"
 
 depends "elixir", "~> 0.9.0"
 depends "libarchive"
