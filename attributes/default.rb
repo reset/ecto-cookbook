@@ -18,5 +18,5 @@
 #
 
 default[:ecto][:migrator][:repo]         = "reset/migrator"
-default[:ecto][:migrator][:release]      = "0.4.2"
+default[:ecto][:migrator][:release]      = "0.5.0"
 default[:ecto][:migrator][:install_path] = "/usr/local/bin"
