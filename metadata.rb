@@ -6,6 +6,6 @@ description      "Installs, configures, and provides LWRPs for components of Ect
 long_description "Installs, configures, and provides LWRPs for components of Ecto"
 version          "0.3.3"
 
-depends "elixir", "~> 0.9.0"
+depends "elixir", "~> 0.10"
 depends "libarchive"
 depends "github"
