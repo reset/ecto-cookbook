@@ -34,7 +34,6 @@ ecto_migrate "my_database" do
   password "secure_password"
   host "localhost"
   migrations_path "/path/to/migrations"
-  schema "public"
 end
 ```
 
